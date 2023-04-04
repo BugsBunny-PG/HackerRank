@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int start_house,end_house;
+	cin>>start_house>>end_house;
+	int a,b;
+	cin>>a>>b;
+	int m_apple,n_orange;
+	cin>>m_apple>>n_orange;
+	vector<int> m,ans;
+	int ma;
+	for(int i=0;i<m_apple;i++)
+	{
+		cin>>ma;
+		m.push_back(ma);
+		ans.push_back(a+ma);
+	}
+	vector<int> n,res;
+	int nb;
+	for(int i=0;i<n_orange;i++)
+	{
+		cin>>nb;
+		n.push_back(nb);
+		res.push_back(b+nb);
+	}
+     
+    int count_apple=0,count_orange=0;
+	for(auto it:ans)
+		{
+			if(it>=start_house&&it<=end_house)
+				count_apple++;
+		}
+	for(auto it:res)
+		{
+			if(it>=start_house&&it<=end_house)
+				count_orange++;
+		}
+	cout<<count_apple<<endl<<count_orange<<endl;
+}
